@@ -9,6 +9,10 @@ import { products } from '../product';
 export class ProductListComponent implements OnInit {
 
   products=products
+  notify()
+  {
+    window.alert("Alerted")
+  }
   constructor() { }
   share():void
   {
