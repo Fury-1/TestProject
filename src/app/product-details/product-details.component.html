@@ -1,8 +1,8 @@
-<h2>Prodcut Deatils</h2>
-<div ngif="product" >
-    <h3> product.name</h3>
-    <h3>product.price</h3>
-    <p>product.description</p>
+<h2>Product Deatils</h2>
+<div *ngIf="product" >
+    <h3> {{product.name}}</h3>
+    <h3>{{product.price}}</h3>
+    <p>{{product.description}}</p>
     <button>Buy</button>
     
 </div>
