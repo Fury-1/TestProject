@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivationStart } from '@angular/router';
+import { CartServiceService } from '../cart-service.service';
 import { Product, products } from '../product';
 
 
@@ -11,7 +12,7 @@ import { Product, products } from '../product';
 export class ProductDetailsComponent implements OnInit {
   product:Product|undefined;
 
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute,private cartservice:CartServiceService) {}
   
 
 
@@ -22,4 +23,9 @@ export class ProductDetailsComponent implements OnInit {
 
   }
 
+  buyProduct(product:Product)
+  {
+    this.cartservice.addToCart(product);
+    window.alert('Product added to the cart');
+  }
 }
